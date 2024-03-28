@@ -11,14 +11,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the Spring Boot project using Gradle
-                sh './gradlew build'
+                sh 'gradle build'
             }
         }
         
         stage('Run') {
             steps {
                 // Run the Spring Boot application
-                sh './gradlew bootRun'
+                sh 'gradle bootRun'
             }
         }
     }
