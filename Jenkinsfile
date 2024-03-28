@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code from your version control system (e.g., Git)
-                git 'your_git_repository_url'
+                git branch: 'test_gradle' , url: 'https://github.com/SreypichTO/DevOPs_tp01.git'
             }
         }
         
