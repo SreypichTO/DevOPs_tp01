@@ -25,7 +25,7 @@ pipeline {
     post {
         success {
             emailext (
-                to: 'mailtrap', 
+                to: 'sreypichdarani2003@gmail.com', 
                 subject: 'Pipeline Successful',
                 body: 'Your Jenkins Pipeline has completed successfully.',
                 mimeType: 'text/html'
@@ -33,7 +33,7 @@ pipeline {
         }
         failure {
             emailext (
-                to: 'mailtrap', 
+                to: 'sreypichdarani2003@gmail.com', 
                 subject: 'Pipeline Failed',
                 body: 'Your Jenkins Pipeline has failed. Please investigate.',
                 mimeType: 'text/html'
