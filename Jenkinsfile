@@ -22,5 +22,23 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            emailext (
+                to: 'mailtrap', 
+                subject: 'Pipeline Successful',
+                body: 'Your Jenkins Pipeline has completed successfully.',
+                mimeType: 'text/html'
+            )
+        }
+        failure {
+            emailext (
+                to: 'mailtrap', 
+                subject: 'Pipeline Failed',
+                body: 'Your Jenkins Pipeline has failed. Please investigate.',
+                mimeType: 'text/html'
+            )
+        }
+    }
 }
 
