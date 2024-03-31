@@ -34,4 +34,22 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            emailext (
+                to: 'sreypichdarani2003@gmail.com', 
+                subject: 'Pipeline Successful',
+                body: 'Your Jenkins Pipeline has completed successfully.',
+                mimeType: 'text/html'
+            )
+        }
+        failure {
+            emailext (
+                to: 'sreypichdarani2003@gmail.com', 
+                subject: 'Pipeline Failed',
+                body: 'Your Jenkins Pipeline has failed. Please investigate.',
+                mimeType: 'text/html'
+            )
+        }
+    }
 }
