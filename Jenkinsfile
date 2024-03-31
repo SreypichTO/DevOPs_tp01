@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Composer'){
             steps{
-                sh 'composer install'
+                sh 'composer installing'
             }
         }
         stage('Copy .env'){
