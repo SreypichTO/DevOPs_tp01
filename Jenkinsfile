@@ -33,6 +33,16 @@ pipeline {
                 sh 'php artisan test'
             }
         }
+        stage('Bot-Notify') {
+            steps {
+                script {
+                    telegramSend(
+                        message: "Jenkins pipeline build ${currentBuild.fullDisplayName} has finished with ${currentBuild.currentResult}",
+                        chatId: "7053971638"
+                    )
+                }
+            }
+        }
     }
     post {
         success {
