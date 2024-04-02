@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     telegramSend(
-                        message: "Jenkins pipeline build ${currentBuild.fullDisplayName} has finished with ${currentBuild.currentResult}",
+                        message: "Jenkins pipeline build ",
                         chatId: "7053971638"
                     )
                 }
